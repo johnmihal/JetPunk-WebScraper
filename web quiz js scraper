@@ -1,0 +1,21 @@
+// John Mihal
+// Web Scraper
+// For use with  https://www.jetpunk.com/
+// Open a quiz and start it.
+// Run script
+// Profit
+
+var ansList = document.querySelectorAll(".answer-display > .h")
+
+ansList.forEach(function(item){console.log(item.textContent);
+});
+
+const box = document.getElementById("txt-answer-box");
+
+
+var ev = new Event('input');
+
+ansList.forEach(function(item){
+  box.value = item.textContent;
+  box.dispatchEvent(ev);
+});
